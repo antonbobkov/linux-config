@@ -1,0 +1,14 @@
+# sudo apt-get install ddclient
+
+# sudo emacs /etc/ddclient.conf
+
+# echo 'run_daemon="true"' | sudo tee -a /etc/default/ddclient
+# sudo service ddclient restart
+# journalctl -u ddclient.service
+
+use=web
+ssl=yes
+protocol=noip
+login=texfan
+password=**********
+texfan.ddns.net
