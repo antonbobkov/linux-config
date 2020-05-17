@@ -15,5 +15,5 @@ shopt -s lithist
 PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
 
 # alias for ll
-alias ll="ls -l"
+alias ll="ls -la"
 
