@@ -1,0 +1,64 @@
+Host localhost
+    User pi
+    IdentityFile ~/.ssh/pi_key_052320
+        
+Host pi-cluster-0
+    HostName ip-pi0
+    User pi
+    IdentityFile ~/.ssh/pi_key_052320
+
+Host pi-cluster-1
+    HostName ip-pi1
+    User pi
+    IdentityFile ~/.ssh/pi_key_052320
+
+Host pi-cluster-2
+    HostName ip-pi2
+    User pi
+    IdentityFile ~/.ssh/pi_key_052320
+
+Host pi-cluster-3
+    HostName ip-pi3
+    User pi
+    IdentityFile ~/.ssh/pi_key_052320
+
+
+
+Host ip-pi0
+    User pi
+    IdentityFile ~/.ssh/pi_key_052320
+
+Host ip-pi1
+    User pi
+    IdentityFile ~/.ssh/pi_key_052320
+
+Host ip-pi2
+    User pi
+    IdentityFile ~/.ssh/pi_key_052320
+
+Host ip-pi3
+    User pi
+    IdentityFile ~/.ssh/pi_key_052320
+    
+
+
+Host p0
+    HostName ip-pi0
+    User pi
+    IdentityFile ~/.ssh/pi_key_052320
+
+Host p1
+    HostName ip-pi1
+    User pi
+    IdentityFile ~/.ssh/pi_key_052320
+
+Host p2
+    HostName ip-pi2
+    User pi
+    IdentityFile ~/.ssh/pi_key_052320
+
+Host p3
+    HostName ip-pi3
+    User pi
+    IdentityFile ~/.ssh/pi_key_052320
+

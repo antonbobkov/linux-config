@@ -1,0 +1,14 @@
+for i in p0 p1 p2 p3; do ssh-copy-id -i .ssh/pi_key_052320.pub $i; done
+
+clusterscp2 etc-hosts "~/"
+clustercmd "cat ~/etc-hosts | sudo tee /etc/hosts"
+clustercmd "sudo cat /etc/hosts"
+
+clusterscp2 bashrc "~/.bashrc"
+clusterscp2 bashrc-pi-functions "~/"
+
+clusterscp2 config "~/.ssh/config"
+clusterscp2 pi_key_052320 "~/.ssh/"
+clusterscp2 pi_key_052320.pub "~/.ssh/"
+
+clusterreboot 

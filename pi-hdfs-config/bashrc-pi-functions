@@ -1,0 +1,37 @@
+function clustercmd {
+  for pi in p0 p1 p2 p3; do ssh $pi "$@"; done
+}
+
+function workercmd {
+  for pi in p1 p2 p3; do ssh $pi "$@"; done
+}
+
+function clusterreboot {
+  clustercmd stop-yarn.sh && \
+  clustercmd stop-dfs.sh && \
+  clustercmd sudo shutdown -r now
+}
+
+function clustershutdown {
+  clustercmd stop-yarn.sh && \
+  clustercmd stop-dfs.sh && \
+  clustercmd sudo shutdown now
+}
+
+function selfscp {
+  for pi in p1 p2 p3; do
+      cat $1 | ssh $pi "sudo tee $1" > /dev/null 2>&1
+  done
+}
+
+function clusterscp2 {
+  for pi in p0 p1 p2 p3; do
+    scp $1 $pi:$2
+  done
+}
+
+function workerscp2 {
+  for pi in p1 p2 p3; do
+    scp $1 $pi:$2
+  done
+}
