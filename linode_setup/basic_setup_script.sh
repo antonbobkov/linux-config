@@ -1,14 +1,14 @@
 #!/bin/bash
 
 # Run this script via:
-# ssh linode 'bash -s' < linode_setup/basic_setup_script.sh
+# scp ~/.ssh/github_key_12_21_20* linode:~/.ssh/
+# ssh linode 'bash -s' < ~/linux-config/linode_setup/basic_setup_script.sh
 
-# sudo apt-get update -y
-# sudo apt-get upgrade -y
-# sudo apt-get install emacs git -y
+sudo apt-get update -y
+sudo apt-get upgrade -y
+sudo apt-get install emacs git -y
 
-#cat <<EOF >> .bashrc
-cat <<EOF >> /dev/null
+cat <<EOF >> .bashrc
 
 HISTTIMEFORMAT="%F %T "
 HISTFILESIZE=-1
@@ -30,4 +30,15 @@ alias ll="ls -la"
 EOF
 
 
+cat <<EOF >> ~/.ssh/config
 
+Host github.com
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/github_key_12_21_20
+    StrictHostKeyChecking no
+
+EOF
+
+git config --global user.email "texfan@gmail.com"
+git config --global user.name "anton_linode"
