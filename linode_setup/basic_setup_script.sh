@@ -27,6 +27,12 @@ PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; h
 # alias for ll
 alias ll="ls -la"
 
+function lazygit() {
+  git add . &&
+  git commit -a -m "boop: $1" &&
+  git push
+}
+
 EOF
 
 
