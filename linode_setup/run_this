@@ -1,0 +1,8 @@
+#!/bin/bash
+
+don't run this directly
+exit
+
+ssh root@linode 'bash -s' < ~/linux-config/linode_setup/root_script.sh
+scp ~/.ssh/github_key_12_21_20* linode:~/.ssh/
+ssh linode 'bash -s' < ~/linux-config/linode_setup/basic_setup_script.sh
