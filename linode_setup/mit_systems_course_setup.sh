@@ -20,6 +20,11 @@ git clone git://g.csail.mit.edu/6.824-golabs-2020 ~/6.824
    ;; '("melpa" . "http://stable.melpa.org/packages/") ; many packages won't show if using stable
    '("melpa" . "https://melpa.org/packages/")
    t))
+
+(add-hook 'go-mode-hook (lambda () (setq tab-width 2)))
+
+;; turn on line numbers
+(global-linum-mode t)
    
 # in emacs
 # M-x package-refresh-contents and then M-x package-install RET go-mode RET
