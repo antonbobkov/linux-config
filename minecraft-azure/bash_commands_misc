@@ -1,0 +1,25 @@
+sudo apt-get update -y && sudo apt-get install emacs default-jdk screen -y
+java -version # When tested: openjdk version "11.0.10" 2021-01-19
+mkdir minecraft; cd minecraft
+URL=https://launcher.mojang.com/v1/objects/1b557e7b033b583cd9f66746b7a9ab1ec1673ced/server.jar
+wget $URL
+
+# Rename the server.jar file so it matches the name of the Minecraft edition downloaded. At the time of writing, the latest Minecraft server release is 1.16.4
+
+# First run, accept eula
+JAR_FILE=minecraft_server.1.16.5.jar
+mv server.jar $JAR_FILE
+java -Xmx1024M -Xms1024M -jar $JAR_FILE nogui
+sed -i 's/false/true/' eula.txt
+
+# Actually run
+screen -S "Minecraft server"
+java -Xmx1024M -Xms1024M -jar $JAR_FILE nogui
+
+
+PORTS:
+
+To play Minecraft online and create a server without any interruptions, you’ll have to allow access to certain ports on your firewall. The default Minecraft ports are:
+
+TCP Port: 25565
+UDP Port: 19132
